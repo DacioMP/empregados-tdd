@@ -3,6 +3,8 @@ package com.devsuperior.demo.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,6 +21,7 @@ public class Department {
 	public Long id;
 	public String name;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "department")
 	public List<Employee> employees = new ArrayList<>();
 	
